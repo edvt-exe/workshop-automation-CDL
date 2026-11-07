@@ -19,3 +19,14 @@ jobs:
       # Compiles the program
       - name: Compile the code
         run: gcc c-bye/bye.c -o bye
+
+      # Rularea programului pentru a verifica output-ul
+      - name: Run and test the code
+        run: ./bye
+
+      # Salveaza executabilul pentru a putea fi descarcat din interfata GitHub
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: executabil-bye
+          path: bye
